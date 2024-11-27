@@ -12,7 +12,7 @@ OBJETIVO - quando clicar no ninja da listagem temos que esconder o cartao do nin
 const listaSelecaoNinjas = document.querySelectorAll('.ninja');
 
 // PASSO 2 - identificar o evento de clique no elemento da listagem
-listaSelecaoNinjas.forEach(function ninja (ninja){
+listaSelecaoNinjas.forEach(ninja => {
     ninja.addEventListener('click', () =>{
     //PASSO 3 - remover a classe aberto so do cartao que ta aberto
         const ninjaAberto = document.querySelector('.aberto');
@@ -21,15 +21,16 @@ listaSelecaoNinjas.forEach(function ninja (ninja){
     //PASSO 4 - ao clicar em um ninja da listagem pegamos o id desse ninja pra saber qual cartao abrir
         const idNinjaSelecionado = ninja.attributes.id.value;
         const idDoCartaoNinjaParaAbrir = 'cartao-' + idNinjaSelecionado;
-        const cartaoNinjaParaAbrir = document.getElementById(idDoCartaoNinjaParaAbrir)
+        const cartaoNinjaParaAbrir = document.getElementById(idDoCartaoNinjaParaAbrir);
         cartaoNinjaParaAbrir.classList.add('aberto');
-    //PASSO 5 - remover a classe ativo que marca o ninja selecionado na listagem
-        const ninjaAtivoNaListagem = document.querySelector(".ativo");
+     //PASSO 5 - remover a classe ativo que marca o ninja selecionado na listagem
+         const ninjaAtivoNaListagem = document.querySelector(".ativo");
         ninjaAtivoNaListagem.classList.remove("ativo");
     //PASSO 6 - adicionar a classe ativo no ninja selecionado na listagem
-        const ninjaSelecionadoNaListagem = document.getElementById(idNinjaSelecionado);
+        const ninjaSelecionadoNaListagem = document.getElementBy(idNinjaSelecionado);
         ninjaSelecionadoNaListagem.classList.add("ativo");
     })
     
-})
+});
+
 
