@@ -23,6 +23,12 @@ listaSelecaoNinjas.forEach(function ninja (ninja){
         const idDoCartaoNinjaParaAbrir = 'cartao-' + idNinjaSelecionado;
         const cartaoNinjaParaAbrir = document.getElementById(idDoCartaoNinjaParaAbrir)
         cartaoNinjaParaAbrir.classList.add('aberto');
+    //PASSO 5 - remover a classe ativo que marca o ninja selecionado na listagem
+        const ninjaAtivoNaListagem = document.querySelector(".ativo");
+        ninjaAtivoNaListagem.classList.remove("ativo");
+    //PASSO 6 - adicionar a classe ativo no ninja selecionado na listagem
+        const ninjaSelecionadoNaListagem = document.getElementById(idNinjaSelecionado);
+        ninjaSelecionadoNaListagem.classList.add("ativo");
     })
     
 })
